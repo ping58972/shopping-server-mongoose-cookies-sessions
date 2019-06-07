@@ -23,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use((req, res, next)=>{
     User.findById('5cf8915ffcf7093404b2dca4').then(user=> {
         req.user = user;
+       // req.isLoggedIn = true;
         next();
     }).catch(err=>console.log(err));
 });
