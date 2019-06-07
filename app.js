@@ -35,6 +35,7 @@ app.use(session({
 
 app.use((req, res, next)=>{
     User.findById('5cf8915ffcf7093404b2dca4').then(user=> {
+    //User.findById(req.session.user._id).then(user=> {
         req.user = user;
        // req.isLoggedIn = true;
         next();
